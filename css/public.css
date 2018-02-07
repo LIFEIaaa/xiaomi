@@ -1,0 +1,7 @@
+*{	
+	margin: 0;/* BODY里的margin值8px清除 */
+	padding: 0;
+	text-decoration: none;
+	font-style: normal;
+	list-style: none;
+}
