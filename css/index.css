@@ -64,6 +64,11 @@
 .head_wenzi:hover{
 	color: #ffffff;
 }
+.nav-1{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
 .nav{
 	width: 1226px;
 	height: 100px;
@@ -78,8 +83,16 @@
 	cursor: pointer;
 }
 .nav_wenzi{
+	width: 608px;
+	height: 100px;
 	float: left;
 	margin-left: 189px;
+	user-select: none;
+}
+.navwz-top{
+	width: auto;
+	height: 100px;
+	float: left;
 }
 .nav_wenzi span{
 	line-height: 100px;
@@ -89,8 +102,18 @@
 	padding: 0px 10px;
 	cursor:pointer;	
 }
+.nav_wenzi a{
+	float: left;
+}
 .nav_wenzi span:hover{
 	color: #ff6700;
+}
+.nav-bottom{
+	width: 100%;
+	height: 0;
+	background: pink;
+	transition: all 1s;
+	overflow: hidden;
 }
  .search{
 	width: 296px;
@@ -656,6 +679,7 @@
 	float: left;
 	cursor: pointer;
 	transition: all 0.5s;
+	user-select: none;
 }
 .jiadian_more1 .active{
 	color: #ff6700;
@@ -696,6 +720,7 @@
 	background-color: #FFFFFF;
 	float: right;
 	border: 1px solid #E0E0E0;
+	user-select: none;
 }
 .tuijian_btn div{
 	width: 34px;
@@ -706,11 +731,14 @@
 }
 .tuijian_btn1{
 	border-right: 1px solid #E0E0E0;
-	color: #B0B0B5;
+	color: #b0b0b5;
 	cursor: pointer;
 }
-.tuijian_btn1:hover{
+.tuijian_btn1:hover,.tuijian_btn2:hover{
 	color: #ff6700;
+}
+.tuijian_btn div.disable{
+	color: #333;
 }
 .tuijian_btn2{
 	color: #E0E2E6;
@@ -739,6 +767,13 @@
 	width: 1226px;
 	height: 100%;
 	margin: 0 auto;
+	overflow: hidden;
+	user-select: none;
+}
+.tuijian-inner{
+	width: 5000px;
+	height: 100%;
+	transition: all 1s;
 }
 .gao2{
 	width: 1226px;
@@ -846,46 +881,46 @@
 .gao5_item{
 	width: 296px;
 	height: 419px;
-	background-color: white;
+	background-color: #fff;
 	float: left;
 	border-top: 1px solid #FFAC12;
 	position: relative;
 	transition: all 0.1s linear;
+	overflow: hidden;
+	user-select: none;
 }
 .gao5_item:hover .neirong_btn{
 	visibility: visible;
 	cursor: pointer;
 }
-.lbd{
+.inner{
+	width: 1000px;
+	height: 420px;
+	transition: all 0.5s;
+}
+.content-3{
 	width: 296px;
+	height: 420px;
+	float: left;
+	z-index: 9;
+}
+.lbd{
+	width: 100px;
 	height: 20px;
+	position: absolute;
+	bottom: 0;
+	left: 110px;
 }
 .lbd1{
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
 	background-color: #B0B0B0; 
-	margin-top: 5px;
-	margin-left: 115px;
-	display: block;
 	cursor: pointer;
 	float: left;
+	margin: 0 7px;
 }
-.lbd2{
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: #B0B0B0; 
-	margin-top: 5px;
-	margin-left: 14px;
-	display: block;
-	cursor: pointer;
-	float: left;
-}
-.lbd .lbd1:hover{
-	background-color: #ff6700;
-}
-.lbd .lbd2:hover{
+.lbd .active{
 	background-color: #ff6700;
 }
 .neirong_btn{
@@ -905,6 +940,7 @@
 	z-index: 100;
 	color: #fff;
 	visibility: hidden;
+	transition: all .5s;
 }
 .neirong_lbtn{
 	left: 0;

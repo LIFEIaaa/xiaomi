@@ -113,3 +113,96 @@
 		jiadians(ele);
 	})
 }
+//内容开始
+{
+	function wheel(parent){
+		let prev=parent.querySelector(".neirong_lbtn");
+		let next=parent.querySelector(".neirong_rbtn");
+		let inner=parent.querySelector(".inner");
+		let pagers=parent.querySelectorAll(".lbd1");
+		let contents=parent.querySelectorAll(".content-3");
+		let n=0;
+		let l=contents.length;
+		next.onclick=function(){
+			n++;
+			if(n===l){
+				n=l-1;
+				return;
+			}
+			inner.style.marginLeft=-296*n+"px";
+			pagers[n].classList.add("active");
+			pagers[n-1].classList.remove("active");
+			obj=pagers[n];
+		};
+		prev.onclick=function(){
+			n--;
+			if(n<0){
+				n=0;
+				return;
+			}
+			inner.style.marginLeft=-296*n+"px";
+			pagers[n].classList.add("active");
+			pagers[n+1].classList.remove("active");
+			obj=pagers[n];
+		};
+		let obj=pagers[0];
+		pagers.forEach(function(ele,index){
+			ele.onclick=function(){
+				obj.classList.remove("active");
+				this.classList.add("active");
+				obj=this;
+				inner.style.marginLeft=index*-296+"px";
+				n=index;
+			}
+		})
+	}
+	let items=document.querySelectorAll(".gao5_item");
+	items.forEach(function(ele){
+		wheel(ele);
+	})
+}
+//推荐开始
+{
+	const prev=document.querySelector(".tuijian_btn1");
+	const next=document.querySelector(".tuijian_btn2");
+	const inner=document.querySelector(".tuijian-inner");
+	let n=0;
+	next.onclick=function(){
+		n++;
+		prev.classList.remove("disable");
+		if(n===2){
+			next.classList.add("disable");
+		}
+		if(n===3){
+			n=2;
+			return;
+		}
+		inner.style.marginLeft=-1240*n+"px";
+	};
+	prev.onclick=function(){
+		n--;
+		next.classList.remove("active");
+		if(n===0){
+			prev.classList.add("disable");
+		}
+		if(n===-1){
+			n=0;
+			return;
+		}
+		inner.style.marginLeft=-1240*n+"px";
+	}
+}
+//导航开始
+{
+	let box=document.querySelector(".nav-1");
+	let top=document.querySelector(".navwz-top");
+	let bottom=document.querySelector(".nav-bottom");
+	top.onmouseenter=function(){
+		bottom.style.height="229px";
+		bottom.style.borderTop="1px solid #e0e0e0";
+	}
+	box.onmouseleave=function(){
+		bottom.style.height="0";
+		bottom.style.borderTop="0";
+	}
+}
