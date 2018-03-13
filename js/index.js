@@ -196,7 +196,17 @@
 {
 	let box=document.querySelector(".nav-1");
 	let top=document.querySelector(".navwz-top");
+	let spans=document.querySelectorAll(".dh-title");
+	let menus=document.querySelectorAll(".container");
 	let bottom=document.querySelector(".nav-bottom");
+	let obj=menus[0];
+	spans.forEach(function(ele,index){
+		ele.onmouseenter=function(){			
+			obj.style.display="none";
+			menus[index].style.display="block";			
+			obj=menus[index];
+		}		
+	})
 	top.onmouseenter=function(){
 		bottom.style.height="229px";
 		bottom.style.borderTop="1px solid #e0e0e0";
@@ -205,4 +215,21 @@
 		bottom.style.height="0";
 		bottom.style.borderTop="0";
 	}
+
+}
+//标签栏开始
+{
+	let labels=document.querySelectorAll(".label");
+	let menus=document.querySelectorAll(".menu");
+	let obj=menus[0];
+	labels.forEach(function(ele,index){
+		ele.onmouseenter=function(){
+			obj.style.display="none";
+			menus[index].style.display="block";
+			obj=menus[index];
+		}
+		ele.onmouseleave=function(){
+			menus[index].style.display="none";
+		}
+	})
 }
